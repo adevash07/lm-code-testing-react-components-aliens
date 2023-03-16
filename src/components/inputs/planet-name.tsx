@@ -1,11 +1,14 @@
 import React from "react";
 
-type Props = {
+export type PlanetNameProps = {
   planetName: string;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const PlanetName: React.FC<Props> = ({ planetName, handleInputChange }) => {
+const PlanetName: React.FC<PlanetNameProps> = ({
+  planetName,
+  handleInputChange,
+}) => {
   return (
     <div>
       <label htmlFor='planet-name'>Planet Name</label>

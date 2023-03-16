@@ -1,11 +1,14 @@
 import React from "react";
 
-type Props = {
+export type SpeciesNameProps = {
   speciesName: string;
   handleInputChange(e: React.ChangeEvent<HTMLInputElement>): void;
 };
 
-const SpeciesName: React.FC<Props> = ({ speciesName, handleInputChange }) => {
+const SpeciesName: React.FC<SpeciesNameProps> = ({
+  speciesName,
+  handleInputChange,
+}) => {
   return (
     <div>
       <label htmlFor='species-name'>Species Name</label>

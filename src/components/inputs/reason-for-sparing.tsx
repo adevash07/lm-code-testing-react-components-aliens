@@ -1,9 +1,9 @@
-type Props = {
+export type ReasonForSparingProps = {
   reasonForSparing: string;
   handleInputChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
-const ReasonForSparing: React.FC<Props> = ({
+const ReasonForSparing: React.FC<ReasonForSparingProps> = ({
   reasonForSparing,
   handleInputChange,
 }) => {

@@ -33,7 +33,6 @@ const W12MForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(e.target);
     console.log(formData);
   };
 

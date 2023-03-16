@@ -1,9 +1,12 @@
-type Props = {
+export type TwoPlusTwoProps = {
   twoPlusTwo: string;
   handleInputChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
-const TwoPlusTwo: React.FC<Props> = ({ twoPlusTwo, handleInputChange }) => {
+const TwoPlusTwo: React.FC<TwoPlusTwoProps> = ({
+  twoPlusTwo,
+  handleInputChange,
+}) => {
   return (
     <div>
       <label htmlFor='two-plus-two'>2 + 2</label>

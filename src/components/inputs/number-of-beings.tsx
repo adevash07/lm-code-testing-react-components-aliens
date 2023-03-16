@@ -1,9 +1,9 @@
-type Props = {
+export type NumberOfBeingsProps = {
   numberOfBeings: string;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const NumberOfBeings: React.FC<Props> = ({
+const NumberOfBeings: React.FC<NumberOfBeingsProps> = ({
   numberOfBeings,
   handleInputChange,
 }) => {
