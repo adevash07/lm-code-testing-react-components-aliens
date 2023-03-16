@@ -1,4 +1,25 @@
-export const validationSample = {
+type Validation = {
+  name: string;
+  message: string;
+  satified: boolean;
+};
+
+type validationOptions =
+  | "SpeciesName"
+  | "PlanetName"
+  | "ReasonForSparing"
+  | "NumberOfBeings"
+  | "TwoPlusTwo";
+
+export type ValidationSample = {
+  SpeciesName: Validation[];
+  PlanetName: Validation[];
+  ReasonForSparing: Validation[];
+  NumberOfBeings: Validation[];
+  TwoPlusTwo: Validation[];
+};
+
+export const validationSample: ValidationSample = {
   SpeciesName: [
     {
       name: "isRequired",
@@ -79,4 +100,45 @@ export const validationSample = {
       satified: false,
     },
   ],
+};
+
+const isRequired = (value: string) => {
+  return value !== "";
+};
+
+const isMinLength = (value: string, minLength: number) => {
+  return value.length >= minLength;
+};
+
+const isMaxLength = (value: string, maxLength: number) => {
+  return value.length <= maxLength;
+};
+
+const isCorrect = (value: string) => {
+  return value === "4";
+};
+
+export const validator = (name: validationOptions, value: string) => {
+  const validation: Validation[] = validationSample[name];
+
+  validation.forEach((rule) => {
+    switch (rule.name) {
+      case "isRequired":
+        rule.satified = isRequired(value);
+        break;
+      case "isMinLength":
+        rule.satified = isMinLength(value, 3);
+        break;
+      case "isMaxLength":
+        rule.satified = isMaxLength(value, 20);
+        break;
+      case "isCorrect":
+        rule.satified = isCorrect(value);
+        break;
+      default:
+        break;
+    }
+  });
+
+  return validation;
 };
