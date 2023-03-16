@@ -5,6 +5,7 @@ import SpeciesName from "./inputs/species-name";
 import NumberOfBeings from "./inputs/number-of-beings";
 import W12MHeader from "./W12MHeader";
 import TwoPlusTwo from "./inputs/what-is-twoplustwo";
+import { validationSample } from "./utils/validator";
 
 const W12MForm = () => {
   //   const [speciesName, setSpeciesName] = useState(" ");
@@ -20,6 +21,8 @@ const W12MForm = () => {
     numberOfBeings: "",
     twoPlusTwo: "",
   });
+
+  const [validationResult, setValidationResult] = useState(validationSample);
 
   const HandleInputChange = (
     e:
@@ -40,6 +43,8 @@ const W12MForm = () => {
     <section className='w12MForm'>
       <W12MHeader />
       {/* REST OF FORM GOES HERE */}
+      <h1 className='title'> Do you want to spare the species? </h1>
+      <p className='subtitle'> Please fill out the form below </p>
       <form onSubmit={(e) => handleSubmit(e)}>
         <SpeciesName
           speciesName={formData.speciesName}
